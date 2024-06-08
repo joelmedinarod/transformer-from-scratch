@@ -1,5 +1,5 @@
 # Build Transformer from Scratch using PyTorch
-Build and train Transformer for translating text from German to Spanish.
+Build and train Transformer for translating text from German to English.
 
 Developed following tutorial by Umar Jamil:
 https://www.youtube.com/watch?v=ISNdQcPhsts&t=569s
