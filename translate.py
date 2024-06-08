@@ -21,7 +21,8 @@ from model import build_transformer
 
 def translate(sentence: str):
     # Define the device, tokenizers, and model
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = 'cpu'
     print("Using device:", device)
     train_config = get_train_config()
     model_config = get_model_config()
@@ -42,7 +43,8 @@ def translate(sentence: str):
         model_config["dropout"],
         model_config["d_ff"],
     ).to(device)
-
+    
+    print(sum(p.numel() for p in model.parameters()))
     # Load the pretrained weights
     model_filename = latest_weights_file_path(train_config)
     print(f"Loading model {model_filename}")

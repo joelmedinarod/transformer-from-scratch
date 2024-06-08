@@ -52,8 +52,8 @@ def get_train_config():
         "lr": 10**-4,
         "scheduler_gamma": 0.95,
         "seq_len": 128,
-        "lang_src": "en",  # English
-        "lang_tgt": "es",  # Spanish
+        "lang_src": "ge",  # German
+        "lang_tgt": "en",  # English
         "datasource": "opus_books",
         "model_folder": "weights",
         "model_basename": "tmodel_",
