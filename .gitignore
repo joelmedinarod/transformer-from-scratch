@@ -1,5 +1,7 @@
 tokenizer_de.json
+tokenizer_en.json
 tokenizer_es.json
 weights/
+weights_de_es/
 runs/
 __pycache__/

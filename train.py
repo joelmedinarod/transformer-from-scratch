@@ -77,9 +77,9 @@ def get_dataset(config):
         item
         for item in dataset_raw
         if len(tokenizer_src.encode(item["translation"][config["lang_src"]]).ids)
-        <= config["seq_len"]
+        <= config["seq_len"] - 2 # consider SOS and EOS tokens
         and len(tokenizer_src.encode(item["translation"][config["lang_tgt"]]).ids)
-        <= config["seq_len"]
+        <= config["seq_len"] - 2 # consider SOS and EOS tokens
     ]
 
     # Split dataset into train and test dataset

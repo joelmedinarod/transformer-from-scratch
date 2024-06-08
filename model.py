@@ -194,7 +194,7 @@ class MultiHeadAttentionBlock(nn.Module):
         # Apply softmax following the formula in the paper
         attention_scores = attention_scores.softmax(
             dim=-1
-        )  # (batch_size, n_heads, seq_len, seq_lean)
+        )  # (batch_size, n_heads, seq_len, seq_len)
 
         if dropout is not None:
             attention_scores = dropout(attention_scores)

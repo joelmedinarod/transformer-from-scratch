@@ -46,14 +46,14 @@ def get_train_config():
             after training one epoch
     """
     return {
-        "batch_size": 8,
+        "batch_size": 16,
         "n_epochs": 30,
         "train_size": 0.9,
-        "lr": 5 * 10**-5,
+        "lr": 10**-4,
         "scheduler_gamma": 0.95,
-        "seq_len": 256,
-        "lang_src": "de",  # german
-        "lang_tgt": "es",  # spanish
+        "seq_len": 128,
+        "lang_src": "en",  # English
+        "lang_tgt": "es",  # Spanish
         "datasource": "opus_books",
         "model_folder": "weights",
         "model_basename": "tmodel_",
