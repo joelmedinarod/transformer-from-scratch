@@ -47,9 +47,9 @@ def get_train_config():
     """
     return {
         "batch_size": 16,
-        "n_epochs": 30,
+        "n_epochs": 50,
         "train_size": 0.9,
-        "lr": 10**-4,
+        "lr": 10**-5,
         "scheduler_gamma": 0.95,
         "seq_len": 128,
         "lang_src": "de",  # German
@@ -57,7 +57,7 @@ def get_train_config():
         "datasource": "opus_books",
         "model_folder": "weights",
         "model_basename": "tmodel_",
-        "preload": "latest",
+        "preload": "39",
         "tokenizer_file": "tokenizer_{0}.json",
         "experiment_name": "runs/tmodel",
         "tests_pro_epoch": 2,

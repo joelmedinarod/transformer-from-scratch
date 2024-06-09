@@ -188,6 +188,9 @@ def train_model(
         # Create progress bar with train_dataloader
         batch_iterator = tqdm(train_dataloader, desc=f"Processing epoch {epoch:02d}")
 
+        # Track loss during the epoch to calculate average
+        epoch_losses = []
+
         for batch in batch_iterator:
             # (batch_size, seq_len)
             encoder_input = batch["enc_input"].to(device)
@@ -221,6 +224,7 @@ def train_model(
 
             # Update progress bar
             batch_iterator.set_postfix({"loss": f"{loss:6.3f}"})
+            epoch_losses.append(loss.item())
 
             # Log progress on tensorboard
             writer.add_scalar("train loss", loss.item(), global_step)
@@ -237,6 +241,8 @@ def train_model(
 
         # Learning rate decay
         scheduler.step()
+
+        print(f"Average train loss pro batch in epoch {epoch}: {(sum(epoch_losses) / len(epoch_losses)):.6f}")
 
         # Test the model
         run_test(
